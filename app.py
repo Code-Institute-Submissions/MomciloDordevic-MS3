@@ -30,7 +30,7 @@ def get_pizzas():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # Checks if the username already exists 
+        # Checks if the username is already in use
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -48,6 +48,11 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
     return render_template("register.html")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("login.html")
 
 # Dont forget to change to debug = False before submiting the project
 
