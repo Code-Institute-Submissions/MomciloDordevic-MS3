@@ -21,10 +21,10 @@
     <header>
         <nav class="nav-extended text-shadow yellow darken-3">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Pizza Lovers</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <a href="{{ url_for('get_pizzas') }}" class="brand-logo">Pizza Lovers</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url_for('get_pizzas') }}">Home</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="#">New Recipe</a></li>
                     <li><a href="#">Manage Categories</a></li>
@@ -36,13 +36,14 @@
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="#">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">New Recipe</a></li>
-                    <li><a href="#">Manage Categories</a></li>
-                    <li><a href="#">Log Out</a></li>
-                    <li><a href="#">Log In</a></li>
-                    <li><a href="#">Register</a></li>
+            <li><h4 class="center-align light-blue-text text-darken-4">Pizza Lovers</h4></li>
+            <li><a href="{{ url_for('get_pizzas') }}">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">New Recipe</a></li>
+            <li><a href="#">Manage Categories</a></li>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
         </ul>
     </header>
 
