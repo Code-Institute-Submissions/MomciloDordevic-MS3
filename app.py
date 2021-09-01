@@ -26,7 +26,6 @@ def get_pizzas():
     return render_template("pizzas.html", pizzas=pizzas)
 
 
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -60,9 +59,10 @@ def login():
         if existing_user:
             # ---- Make sure hashed password match
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
+                existing_user["password"], request.form.get(
+                    "password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
             else:
                 # ---- Password doesnt match
                 flash("Incorrect Username and/or Password")
