@@ -46,6 +46,7 @@ def register():
         # Puts the new user into 'session'
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
@@ -63,6 +64,7 @@ def login():
                     "password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 # ---- Password doesnt match
                 flash("Incorrect Username and/or Password")
@@ -76,10 +78,14 @@ def login():
     return render_template("login.html")
 
 
-# Dont forget to change to debug = False before submiting the project
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=True)  # ---- Dont forget to change debug = False
