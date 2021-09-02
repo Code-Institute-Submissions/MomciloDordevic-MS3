@@ -44,7 +44,7 @@ def login_required(f):
 @app.route("/")
 @app.route("/get_pizzas")
 def get_pizzas():
-    pizzas = mongo.db.pizzas.find()
+    pizzas = list(mongo.db.pizzas.find())
     return render_template("pizzas.html", pizzas=pizzas)
 
 
