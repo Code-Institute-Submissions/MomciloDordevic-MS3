@@ -1,14 +1,18 @@
-# ------ Imports
+# ---- Imports
 
 
 import os
 from flask import (
-    Flask, flash, render_template, redirect, request, session, url_for)
+    Flask, flash, render_template, g, redirect, request, session, url_for)
+from functools import wraps
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+
+
+# ---- Flask App Configuration
 
 
 app = Flask(__name__)
@@ -18,6 +22,24 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+# ---- Credits:
+# https://github.com/TravelTimN/flask-task-manager-project/blob/demo/app.py
+# https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
+
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        # no "user" in session
+        if "user" not in session:
+            flash("You must log in to view this page")
+            return redirect(url_for("login"))
+        # user is in session
+        return f(*args, **kwargs)
+    return decorated_function
+
 
 @app.route("/")
 @app.route("/get_pizzas")
@@ -29,7 +51,7 @@ def get_pizzas():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # Checks if the username is already in use
+        # ---- Checks if the username is already in use
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -43,7 +65,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # Puts the new user into 'session'
+        # ---- Puts the new user into 'session'
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -52,33 +74,42 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
-        # ---- Check if user exists
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+    if "user" not in session:
+        if request.method == "POST":
+            # ---- Check if user exists
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
 
-        if existing_user:
-            # ---- Make sure hashed password match
-            if check_password_hash(
-                existing_user["password"], request.form.get(
-                    "password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for("profile", username=session["user"]))
+            if existing_user:
+                # ---- Makes sure hashed passwords match
+                if check_password_hash(
+                    existing_user['password'], request.form.get(
+                        "password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash(
+                        "Welcome back {} ! Lets start making recipes!".format(
+                            request.form.get("username")))
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
+                else:
+                    # ---- Password doesnt match
+                    flash(
+                        "Incorrect Username and/or Password, try again please")
+                    return redirect(url_for("login"))
+
             else:
-                # ---- Password doesnt match
-                flash("Incorrect Username and/or Password")
+                # ---- Username doesnt exist
+                flash("Incorrect Username and/or Password, try again please")
                 return redirect(url_for("login"))
 
-        else:
-            # ---- Username doesnt exist
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
+        return render_template("login.html")
 
-    return render_template("login.html")
+    # ---- If user is already logged in, redirect to profile page
+    return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
+@login_required
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -90,6 +121,7 @@ def profile(username):
 
 
 @app.route("/logout")
+@login_required
 def logout():
     flash("You have been logged out")
     session.pop("user")
