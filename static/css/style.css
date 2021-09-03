@@ -1,3 +1,14 @@
+/* Styles needed in order for the footer to be fixed at bottom of the page */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -34,12 +45,49 @@
 }
 
 .content .recipe-heading {
-    font-size: 1.4em;
-    font-weight: 900;
+    font-size: 1.5em;
+    font-weight: 800;
 }
 
 
 .card-image {
     width: 100%;
     height: 220px;
+}
+
+/* Footer */
+
+
+.page-footer {
+    background-color: #f9a825;
+    padding: 20px 0;
+}
+
+.page-footer .social-heading {
+    margin-bottom: 30px;
+}
+
+.page-footer .btn-newsletter {
+    margin-top: 5px;
+}
+
+.page-footer .social-box {
+    padding-top: 5px;
+}
+
+.page-footer .social-links {
+    padding: 10px;
+}
+
+.social-links i {
+    font-size: 2em;
+    -webkit-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
+
+.social-links:hover i {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
 }
