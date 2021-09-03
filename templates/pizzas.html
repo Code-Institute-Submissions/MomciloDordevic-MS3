@@ -2,27 +2,41 @@
 {% block content %}
 
 
-    <div class="row">
-        <div class="col s12">
-            <h3 class="center-align page-heading">
-                Pizzas
-            </h3>
-        </div>
+<div class="row">
+    <div class="col s12">
+        <h3 class="center-align page-heading">
+            Pizzas
+        </h3>
     </div>
-
-    <ul class="collapsible">
+</div>
+{% if pizzas|length > 0 %}
+<section class="recipes">
+    <div class="row">
         {% for pizza in pizzas %}
-        <li>
-            <div class="collapsible-header yellow darken-3">
-                <i class="fas fa-utensils"></i>
-                {{ pizza.recipe_name }} : {{ pizza.ingredients }}
+        <div class="col s12 m6 l6 xl4">
+            <div class="card medium recipe-card">
+                <div class="card-image">
+                    <img src="#" alt="{{ pizza.recipe_name }}">
+                </div>
+                <div class="card-content content center-align">
+                    <h3 class="recipe-heading">{{ pizza.recipe_name }}</h3>
+                    <span>{{ pizza.ingredients }}</span>
+                </div>
+                <div class="card-action btn-box center-align">
+                    <a class="full-recipe-btn text-shadow"
+                        href="#">Full Recipe</a>
+                </div>
             </div>
-            <div class="collapsible-body">
-                {{ pizza.category_name }}
-                <p>{{ pizza.alergens }}</p>
-            </div>
-        </li>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
+</section>
+{% else %}
+<div class="row no-results-row valign-wrapper">
+    <div class="col s12">
+        <h3 class="center-align no-results-heading">No Results found <span>🤔</span></h3>
+    </div>
+</div>
+{% endif %}
 
 {% endblock %}
