@@ -128,6 +128,26 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/subscribe", methods=["GET", "POST"])
+def subscribe():
+    if request.method == "POST":
+        # ---- Checks if email already exists in db
+        existing_email = mongo.db.subscribers.find_one(
+            {"email": request.form.get("email").lower()})
+
+        if existing_email:
+            flash("You are already subscribed to the newsletter!")
+            return redirect(url_for('get_pizzas'))
+        # ---- Adds mail to subscribers collection in db
+        subscribe = {
+            "email": request.form.get("email").lower()
+        }
+        mongo.db.subscribers.insert_one(subscribe)
+
+    flash("You are succesfully subscribed!")
+    return redirect(url_for("get_pizzas"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
