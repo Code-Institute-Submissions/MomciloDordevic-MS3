@@ -148,10 +148,26 @@ def subscribe():
     return redirect(url_for("get_pizzas"))
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
+@login_required
 def add_recipe():
-    return render_template("add_recipe.html")
+    if request.method == "POST":
+        pizza = {
+            "recipe_name": request.form.get("recipe_name"),
+            "image_url": request.form.get("image_url"),
+            "ingredients": request.form.getlist("ingredients"),
+            "baking_time": request.form.get("baking_time"),
+            "alergens": request.form.get("alergens"),
+            "is_vegan": request.form.get("is_vegan")
+        }
 
+        mongo.db.pizzas.insert_one(pizza)
+        flash("Recipe Successfully Added!")
+        return redirect(url_for("profile", username=session["user"]))
+
+    pizzas = mongo.db.pizzas.find().sort("name", 1)
+
+    return render_template("add_recipe.html", pizzas=pizzas)
 
 # ---- Error Handlers
 
