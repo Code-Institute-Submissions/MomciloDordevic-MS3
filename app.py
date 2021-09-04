@@ -171,6 +171,36 @@ def add_recipe():
 
     return render_template("add_recipe.html", pizzas=pizzas)
 
+
+@app.route("/edit_recipe/<pizza_id>", methods=["GET", "POST"])
+@login_required
+def edit_recipe(pizza_id):
+    # ---- Only users can edit recipes
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+
+    # ---- Edit recipe to db
+    if request.method == "POST":
+        edited = {
+            "recipe_name": request.form.get("recipe_name"),
+            "image_url": request.form.get("image_url"),
+            "ingredients": request.form.get("ingredients"),
+            "baking_time": request.form.get("baking_time"),
+            "alergens": request.form.get("alergens"),
+            "is_vegan": request.form.get("is_vegan"),
+            "recipe_description": request.form.get("recipe_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.pizzas.update({"_id": ObjectId(pizza_id)}, edited)
+        flash("Recipe is successfully edited")
+        return redirect(url_for("profile", username=session['user']))
+
+    pizza = mongo.db.pizzas.find_one({"_id": ObjectId(pizza_id)})
+    pizzas = mongo.db.pizzas.find().sort("recipe_name", 1)
+    return render_template(
+        "edit_recipe.html", pizza=pizza, pizzas=pizzas)
+
+
 # ---- Error Handlers
 
 
