@@ -1,1 +1,86 @@
-<h1>Edit your pizza here</h1>
+{% extends "base.html" %}
+{% block content %}
+
+    <!---- Title ---->
+    <div class="row card-panel grey lighten-5">
+        <h3 class="center-align">Edit recipe</h3>
+    </div>
+
+    <!---- Add recipes ---->
+    <div class="row card-panel grey lighten-5">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', pizza_id=pizza._id) }}">
+            <!---- Recipe name ---->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="recipe_name" name="recipe_name" value="{{ pizza.recipe_name }}" type="text" pattern="^[^\s][A-Za-z0-9\s]{1,20}$" class="validate" required>
+                    <label for="recipe_name">Recipe name</label>
+                </div>
+            </div>
+            <!---- Upload img URL ---->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="image_url" name="image_url" value="{{ pizza.image_url }}" type="url">
+                    <label for="image_url">Image url</label>
+                    <span class="helper-text" data-error="enter valid URL" data-success="right"></span>
+                </div>
+            </div>
+            <!---- Ingredients  ---->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate">
+                        {{- pizza.ingredients -}}
+                    </textarea>
+                    <label for="ingredients">Ingredients</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+            <!---- Alergens  ---->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="alergens" name="alergens" class="materialize-textarea validate">
+                        {{- pizza.alergens -}}
+                    </textarea>
+                    <label for="alergens">Alergens</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+            <!---- Baking Time  ---->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="baking_time" name="baking_time" value="{{ pizza.baking_time }}" type="text" class="validate">
+                    <label for="baking_time">Baking Time (in minutes)</label>
+                    <span class="helper-text" data-error="enter valid number" data-success="right">For examle: 30</span>
+                </div>
+            </div>
+            <!---- Tips  ---->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="recipe_description" name="recipe_description" class="materialize-textarea">
+                        {{- pizza.recipe_description -}}
+                    </textarea>
+                    <label for="recipe_description">Recipe description</label>
+                </div>
+            </div>
+            <div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+                        <i class="fab fa-pagelines prefix vegan_tooltip"></i>
+						<label for="is_vegan">
+                            <input type="checkbox" id="is_vegan" name="is_vegan">
+                            <span class="lever"></span>
+                            Vegan
+                        </label>
+					</div>
+				</div>
+			</div>
+            <!---- Submit button ---->
+            <div class="row">
+                <div class="col s12">
+                    <button type="submit" class="col s3 btn-small custom-btn">Edit recipe</button>
+                    <a class = "col s3 btn-small custom-btn center-align" href="{{ url_for('profile', username=session['user'])  }}">cancel</a>
+                </div>      
+            </div>
+        </form>
+    </div>
+    
+{% endblock %}
