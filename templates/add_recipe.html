@@ -23,13 +23,12 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="far fa-image prefix form-icon"></i>
-                        <input type="url" id="image_url" name="image_url" class="validate" pattern="https?://.+"
-                            required>
+                        <input type="url" id="image_url" name="image_url" class="validate" pattern="https?://.+">
                         <label for="image_url">Recipe Image URL</label>
                     </div>
                 </div>
                 <!---- Ingredients ---->
-                <div id="ingredient-row" class="row">
+                <div id="ingredients-row" class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-list-ul prefix form-icon"></i>
                         <input type="text" id="ingredients" name="ingredients" minlength="3" class="validate" required>
@@ -48,8 +47,15 @@
                 <div id="baking-time-row" class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-list-ul prefix form-icon"></i>
-                        <input type="text" id="baking-time" name="baking-time" minlength="2" class="validate" required>
-                        <label for="baking-time">Baking Time</label>
+                        <input type="text" id="baking_time" name="baking_time" minlength="2" class="validate" required>
+                        <label for="baking_time">Baking Time</label>
+                    </div>
+                </div>
+                <div id="ingredient-row" class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-list-ul prefix form-icon"></i>
+                        <input type="text" id="recipe_description" name="recipe_description">
+                        <label for="recipe_description">Recipe Description</label>
                     </div>
                 </div>
                 <div class="row">

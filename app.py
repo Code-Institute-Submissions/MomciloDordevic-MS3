@@ -155,10 +155,12 @@ def add_recipe():
         pizza = {
             "recipe_name": request.form.get("recipe_name"),
             "image_url": request.form.get("image_url"),
-            "ingredients": request.form.getlist("ingredients"),
+            "ingredients": request.form.get("ingredients"),
             "baking_time": request.form.get("baking_time"),
             "alergens": request.form.get("alergens"),
-            "is_vegan": request.form.get("is_vegan")
+            "is_vegan": request.form.get("is_vegan"),
+            "recipe_description": request.form.get("recipe_description"),
+            "created_by": session["user"]
         }
 
         mongo.db.pizzas.insert_one(pizza)
