@@ -136,7 +136,7 @@ def subscribe():
             {"email": request.form.get("email").lower()})
 
         if existing_email:
-            flash("You are already subscribed to the newsletter!")
+            flash("You are already subscribed to the Newsletter!")
             return redirect(url_for('get_pizzas'))
         # ---- Adds mail to subscribers collection in db
         subscribe = {
