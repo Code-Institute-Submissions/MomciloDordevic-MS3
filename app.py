@@ -152,13 +152,14 @@ def subscribe():
 @login_required
 def add_recipe():
     if request.method == "POST":
+        is_vegan = "on" if request.form.get("is_vegan") else "off"
         pizza = {
             "recipe_name": request.form.get("recipe_name"),
             "image_url": request.form.get("image_url"),
             "ingredients": request.form.get("ingredients"),
             "baking_time": request.form.get("baking_time"),
             "alergens": request.form.get("alergens"),
-            "is_vegan": request.form.get("is_vegan"),
+            "is_vegan": is_vegan,
             "recipe_description": request.form.get("recipe_description"),
             "created_by": session["user"]
         }
@@ -181,13 +182,14 @@ def edit_recipe(pizza_id):
 
     # ---- Edit recipe to db
     if request.method == "POST":
+        is_vegan = "on" if request.form.get("is_vegan") else "off"
         edited = {
             "recipe_name": request.form.get("recipe_name"),
             "image_url": request.form.get("image_url"),
             "ingredients": request.form.get("ingredients"),
             "baking_time": request.form.get("baking_time"),
             "alergens": request.form.get("alergens"),
-            "is_vegan": request.form.get("is_vegan"),
+            "is_vegan": is_vegan,
             "recipe_description": request.form.get("recipe_description"),
             "created_by": session["user"]
         }
