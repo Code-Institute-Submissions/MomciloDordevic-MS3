@@ -17,13 +17,37 @@ main {
     line-height: 2;
 }
 
+/* Buttons */
+
 .btn, .btn-large, .btn-small {
     background-color: red;
+}
+
+.btn-row {
+    padding-top: 50px;
+}
+
+.btn-row .add-recipe-btn {
+    padding: 15px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f9a825;
+}
+
+.btn-row .cancel-btn {
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #bb0000;
+    color: #fff;
 }
 
 .vegan_tooltip {
     color: rgb(0, 185, 0);
 }
+
+/* Recipe */
 
 .recipe-card {
     background-color:#fafafa;
@@ -57,25 +81,6 @@ main {
 }
 
 
-.btn-row {
-    padding-top: 50px;
-}
-
-.btn-row .add-recipe-btn {
-    padding: 15px 20px;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    background-color: #f9a825;
-}
-
-.btn-row .cancel-btn {
-    padding: 15px 20px;
-    border-radius: 8px;
-    background-color: #bb0000;
-    color: #fff;
-}
 
 /* Footer */
 
