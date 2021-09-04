@@ -6,5 +6,65 @@
         <h3 class="center-align page-heading">Add Pizza Recipe</h3>
     </div>
 </div>
+<section class="form-container">
+    <div class="row form-row">
+        <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12 m10 offset-m1 l10 offset-l1">
+            <div class="card-panel">
+                <!---- Recipe name ---->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix form-icon"></i>
+                        <input type="text" id="recipe_name" name="recipe_name" minlength="3" maxlength="25"
+                            class="validate" required>
+                        <label for="recipe_name">Pizza Recipe Name</label>
+                    </div>
+                </div>
+                <!---- Recipe Image URl ---->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="far fa-image prefix form-icon"></i>
+                        <input type="url" id="image_url" name="image_url" class="validate" pattern="https?://.+"
+                            required>
+                        <label for="image_url">Recipe Image URL</label>
+                    </div>
+                </div>
+                <!---- Ingredients ---->
+                <div id="ingredient-row" class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-list-ul prefix form-icon"></i>
+                        <input type="text" id="ingredients" name="ingredients" minlength="3" class="validate" required>
+                        <label for="ingredients">Ingredients</label>
+                    </div>
+                </div>
+                <!---- Alergens ---->
+                <div id="alergens-row" class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-list-ul prefix form-icon"></i>
+                        <input type="text" id="alergens" name="alergens" minlength="2" class="validate" required>
+                        <label for="alergens">Alergens</label>
+                    </div>
+                </div>
+                <!---- Baking Time ----->
+                <div id="baking-time-row" class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-list-ul prefix form-icon"></i>
+                        <input type="text" id="baking-time" name="baking-time" minlength="2" class="validate" required>
+                        <label for="baking-time">Baking Time</label>
+                    </div>
+                </div>
+                <!---- Add Recipe and Cancel Button---->
+                <div class="row btn-row valign-wrapper">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="add-recipe-btn text-shadow">Add Recipe</button>
+                    </div>
+                    <div class="col s12 center-align">
+                        <a href="{{ url_for('profile', username=session['user']) }}"
+                            class="cancel-btn text-shadow">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
 
 {% endblock %}
