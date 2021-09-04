@@ -21,6 +21,9 @@ main {
     background-color: red;
 }
 
+.vegan_tooltip {
+    color: rgb(0, 185, 0);
+}
 
 .recipe-card {
     background-color:#fafafa;

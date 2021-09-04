@@ -19,12 +19,14 @@
                     <img src="{{ pizza.image_url }}">
                 </div>
                 <div class="card-content content center-align">
-                    <h3 class="recipe-heading">{{ pizza.recipe_name }}</h3>
-                    <span>{{ pizza.ingredients }}
+                    <h3 class="recipe-heading">{{ pizza.recipe_name }}
                         {% if pizza.is_vegan == "Yes" %}
-                    <i class="fas fa-seedling vegan_tooltip tooltipped"
-                        data-position="right" data-tooltip="Vegan!"></i>
-                    {% endif %}
+                        <i class="fab fa-pagelines vegan_tooltip tooltipped" data-position="right"
+                            data-tooltip="Vegan!"></i>
+                        {% endif %}
+                    </h3>
+                    <span>Alergens: {{ pizza.alergens }}<br>
+                        Ingredients: {{ pizza.ingredients }}<br>
                     </span>
                 </div>
                 <div class="card-action btn-box center-align">
