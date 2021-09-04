@@ -199,8 +199,14 @@ def edit_recipe(pizza_id):
 
     pizza = mongo.db.pizzas.find_one({"_id": ObjectId(pizza_id)})
     pizzas = mongo.db.pizzas.find().sort("recipe_name", 1)
-    return render_template(
-        "edit_recipe.html", pizza=pizza, pizzas=pizzas)
+    return render_template("edit_recipe.html", pizza=pizza, pizzas=pizzas)
+
+
+@app.route("/delete_recipe/<pizza_id>")
+def delete_recipe(pizza_id):
+    mongo.db.pizzas.remove({"_id": ObjectId(pizza_id)})
+    flash("Recipe is succesfully deleted")
+    return redirect(url_for("profile", username=session['user']))
 
 
 # ---- Error Handlers
