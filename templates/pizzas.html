@@ -30,6 +30,18 @@
                         By: {{ pizza.created_by }}
                     </span>
                 </div>
+                {% if session.user|lower == pizza.created_by|lower %}
+                <div class="row btn-row-recipe">
+                    <div class="col s12">
+                        <div class="col s6 m6">
+                            <a class="btn-edit" href="#">Edit</a>
+                        </div>
+                        <div class="col s6 m6">
+                            <a class="btn-delete modal-trigger" href="#">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
                 <div class="card-action btn-box center-align">
                     <a href="#">Full Recipe</a>
                 </div>
