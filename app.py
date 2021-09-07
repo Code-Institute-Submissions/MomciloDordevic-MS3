@@ -206,6 +206,7 @@ def edit_recipe(pizza_id):
 
 
 @app.route("/delete_recipe/<pizza_id>")
+@login_required
 def delete_recipe(pizza_id):
     mongo.db.pizzas.remove({"_id": ObjectId(pizza_id)})
     flash("Recipe is succesfully deleted")
@@ -213,12 +214,28 @@ def delete_recipe(pizza_id):
 
 
 @app.route("/categories")
+@login_required
 def categories():
     if not session.get("user") == "admin":
         return render_template("error_handlers/404.html")
 
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
+
+@app.route("/add_category", methods=["GET", "POST"])
+@login_required
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")}
+        mongo.db.categories.insert_one(category)
+        flash("New category is succesfully added")
+        return redirect(url_for("categories"))
+
+    return render_template("add_category.html")
+
+
 
 # ---- Error Handlers
 
