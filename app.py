@@ -154,6 +154,7 @@ def add_recipe():
     if request.method == "POST":
         is_vegan = "on" if request.form.get("is_vegan") else "off"
         pizza = {
+            "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "image_url": request.form.get("image_url"),
             "ingredients": request.form.get("ingredients"),
@@ -168,9 +169,9 @@ def add_recipe():
         flash("Recipe Successfully Added!")
         return redirect(url_for("profile", username=session["user"]))
 
-    pizzas = mongo.db.pizzas.find().sort("name", 1)
+    categories = mongo.db.categories.find().sort("category_name", 1)
 
-    return render_template("add_recipe.html", pizzas=pizzas)
+    return render_template("add_recipe.html", categories=categories)
 
 
 @app.route("/edit_recipe/<pizza_id>", methods=["GET", "POST"])
@@ -184,6 +185,7 @@ def edit_recipe(pizza_id):
     if request.method == "POST":
         is_vegan = "on" if request.form.get("is_vegan") else "off"
         edited = {
+            "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "image_url": request.form.get("image_url"),
             "ingredients": request.form.get("ingredients"),
@@ -198,8 +200,9 @@ def edit_recipe(pizza_id):
         return redirect(url_for("profile", username=session['user']))
 
     pizza = mongo.db.pizzas.find_one({"_id": ObjectId(pizza_id)})
-    pizzas = mongo.db.pizzas.find().sort("recipe_name", 1)
-    return render_template("edit_recipe.html", pizza=pizza, pizzas=pizzas)
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "edit_recipe.html", pizza=pizza, categories=categories)
 
 
 @app.route("/delete_recipe/<pizza_id>")
@@ -217,6 +220,12 @@ def get_recipe():
 
     recipes = mongo.db.pizzas.find().sort("recipe_name", 1)
     return render_template("recipes.html", recipes=recipes)
+
+
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("recipes.html", categories=categories)
 
 # ---- Error Handlers
 
