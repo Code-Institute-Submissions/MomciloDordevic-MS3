@@ -212,20 +212,13 @@ def delete_recipe(pizza_id):
     return redirect(url_for("profile", username=session['user']))
 
 
-@app.route("/get_recipe")
-@login_required
-def get_recipe():
+@app.route("/categories")
+def categories():
     if not session.get("user") == "admin":
         return render_template("error_handlers/404.html")
 
-    recipes = mongo.db.pizzas.find().sort("recipe_name", 1)
-    return render_template("recipes.html", recipes=recipes)
-
-
-@app.route("/get_categories")
-def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("recipes.html", categories=categories)
+    return render_template("categories.html", categories=categories)
 
 # ---- Error Handlers
 
