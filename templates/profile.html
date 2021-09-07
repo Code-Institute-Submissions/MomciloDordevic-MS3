@@ -1,14 +1,68 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3 class="center-align">
+    {{ username }}'s Recipes
+</h3>
+
+
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_recipe') }}" class="add-recipe-btn text-shadow">Add Recipe</a>
+    </div>
+</div>
+
+<section class="">
     <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <h3 class="center-align text-darken-4">
-                    {{ username }}'s Profile
-                </h3>
+        {% if pizzas|length == 0 %}
+        <div class="col s12 center-align">
+            <h5 class="">Hey <span>{{ username }}!</span></h5>
+            <br>
+            <p class="">Ready to create something delicious?</p>
+            <br>
+            <p class="">Simply click the button above</p>
+        </div>
+        {% else %}
+        {% for pizza in pizzas %}
+        <div class="col s12 m6 l6 xl4">
+            <div class="card large recipe-card">
+                <div class="card-image">
+                    <img src="{{ pizza.image_url }}">
+                </div>
+                <div class="card-content content center-align">
+                    <h3 class="recipe-heading">{{ pizza.recipe_name }}
+                        {% if pizza.is_vegan == "on" %}
+                        <i class="fab fa-pagelines vegan_tooltip tooltipped" data-position="right"
+                            data-tooltip="Vegan!"></i>
+                        {% endif %}
+                    </h3>
+                    <span>Alergens: {{ pizza.alergens }}<br>
+                        Ingredients: {{ pizza.ingredients }}<br>
+                        By: {{ pizza.created_by }}
+                    </span>
+                </div>
+                {% if session.user|lower == pizza.created_by|lower %}
+                <div class="row center-align">
+                    <div class="col s12">
+                        <div class="col s6 m6">
+                            <a class="btn-edit" href="{{ url_for('edit_recipe', pizza_id=pizza._id) }}">Edit</a>
+                        </div>
+                        <div class="col s6 m6">
+                            <a class="btn-delete" href="{{ url_for('delete_recipe', pizza_id=pizza._id) }}">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="card-action btn-box center-align">
+                    <a href="#">Full Recipe</a>
+                </div>
             </div>
         </div>
+        {% endfor %}
+        {% endif %}
     </div>
+
+</section>
+
 
 {% endblock %}
