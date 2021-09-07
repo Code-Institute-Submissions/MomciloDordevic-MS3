@@ -41,11 +41,17 @@ def login_required(f):
     return decorated_function
 
 
+# ---- Home Page
+
+
 @app.route("/")
 @app.route("/get_pizzas")
 def get_pizzas():
     pizzas = list(mongo.db.pizzas.find())
     return render_template("pizzas.html", pizzas=pizzas)
+
+
+# ---- Register
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -70,6 +76,9 @@ def register():
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
+
+
+# ---- Log In
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -108,6 +117,9 @@ def login():
     return redirect(url_for("profile", username=session["user"]))
 
 
+# ---- Profile
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
 def profile(username):
@@ -120,12 +132,18 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# ---- Log Out
+
+
 @app.route("/logout")
 @login_required
 def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+# ---- Subscribe to Newsletter
 
 
 @app.route("/subscribe", methods=["GET", "POST"])
@@ -146,6 +164,9 @@ def subscribe():
 
     flash("You are succesfully subscribed!")
     return redirect(url_for("get_pizzas"))
+
+
+# ---- Add Recipe
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -172,6 +193,9 @@ def add_recipe():
     categories = mongo.db.categories.find().sort("category_name", 1)
 
     return render_template("add_recipe.html", categories=categories)
+
+
+# ---- Edit Recipe
 
 
 @app.route("/edit_recipe/<pizza_id>", methods=["GET", "POST"])
@@ -205,12 +229,18 @@ def edit_recipe(pizza_id):
         "edit_recipe.html", pizza=pizza, categories=categories)
 
 
+# ---- Delete Recipe
+
+
 @app.route("/delete_recipe/<pizza_id>")
 @login_required
 def delete_recipe(pizza_id):
     mongo.db.pizzas.remove({"_id": ObjectId(pizza_id)})
     flash("Recipe is succesfully deleted")
     return redirect(url_for("profile", username=session['user']))
+
+
+# ---- Categories
 
 
 @app.route("/categories")
@@ -221,6 +251,9 @@ def categories():
 
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
+
+# ---- Add Category
 
 
 @app.route("/add_category", methods=["GET", "POST"])
@@ -236,6 +269,9 @@ def add_category():
     return render_template("add_category.html")
 
 
+# ---- Edit Category
+
+
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -249,11 +285,17 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+# ---- Delete Category
+
+
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category is succesfully deleted")
     return redirect(url_for("categories"))
+
+
+# ---- Search
 
 
 @app.route("/search", methods=["GET", "POST"])
