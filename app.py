@@ -256,6 +256,13 @@ def delete_category(category_id):
     return redirect(url_for("categories"))
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    pizzas = list(mongo.db.pizzas.find({"$text": {"$search": query}}))
+    return render_template("pizzas.html", pizzas=pizzas)
+
+
 # ---- Error Handlers
 
 

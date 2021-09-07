@@ -9,6 +9,29 @@
         </h3>
     </div>
 </div>
+
+
+<section class="search">
+    <div class="row card-panel search-panel">
+        <form class="col s12" action="{{ url_for('search') }}" method="POST">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12">
+                    <i class="fas fa-search prefix"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search Recipes, Alergens, Ingredients</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a class="btn" href="{{ url_for('get_pizzas') }}">Reset</a>
+                    <button class="btn" type="submit"><i
+                            class="fas fa-search left"></i>Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
 {% if pizzas|length > 0 %}
 <section class="recipes">
     <div class="row">
