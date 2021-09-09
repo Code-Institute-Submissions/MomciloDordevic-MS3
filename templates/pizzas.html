@@ -65,7 +65,7 @@
                 </div>
                 {% endif %}
                 <div class="card-action btn-box center-align">
-                    <a class="full-recipe-btn text-shadow black-text" href="#">Full Recipe</a>
+                    <a class="full-recipe-btn black-text" href="{{ url_for('full_recipe', pizza_id=pizza._id) }}">Full Recipe</a>
                 </div>
             </div>
         </div>
