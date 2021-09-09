@@ -249,8 +249,8 @@ def delete_recipe(pizza_id):
 @app.route("/full_recipe/<pizza_id>")
 @login_required
 def full_recipe(pizza_id):
-    recipe = mongo.db.pizzas.find_one({"_id": ObjectId(pizza_id)})
-    return render_template("full_recipe.html", recipe=recipe)
+    pizza = mongo.db.pizzas.find_one({"_id": ObjectId(pizza_id)})
+    return render_template("full_recipe.html", pizza=pizza)
 
 
 # ---- Categories

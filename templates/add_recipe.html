@@ -91,7 +91,7 @@
                         <button type="submit" class="add-recipe-btn text-shadow">Add Recipe</button>
                     </div>
                     <div class="col s12 center-align">
-                        <a href="{{ url_for('profile', username=session['user']) }}"
+                        <a href="{{ url_for('get_pizzas', username=session['user']) }}"
                             class="cancel-btn text-shadow">Cancel</a>
                     </div>
                 </div>
