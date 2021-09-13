@@ -6,7 +6,11 @@
             {{ pizza.recipe_name }}
         </h3>
     </div>
-    <h5> This is an {{ pizza.category_name }} recipe by: {{ pizza.created_by }}</h5>
+    <div class="row">
+        <div class="col s12">
+            <h5> This is an {{ pizza.category_name }} recipe by {{ pizza.created_by }}</h5>
+        </div>
+    </div>
 </div>
 
 <section>
