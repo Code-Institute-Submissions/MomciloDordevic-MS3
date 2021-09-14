@@ -17,6 +17,21 @@ main {
     line-height: 2;
 }
 
+header .brand-logo,
+.sidenav-logo {
+    font-size: 4em;
+    font-weight: 700;
+}
+
+.page-heading {
+    color: #f9a825;
+    padding-top: 10px;
+}
+
+.search {
+    padding-top: 10px;
+}
+
 /* Buttons */
 
 .btn, .btn-large, .btn-small {
@@ -124,20 +139,6 @@ main {
     display:flex;
 }
 
-@media screen and (max-width: 500px) {
-    h4 {
-        font-size: 20px;
-    }
-    h5 {
-        font-size: 20px;
-    }
-
-    .full-recipe-img {
-        height: 260px;
-        padding-left: 25px;
-    }
-}
-
 
 /* Media Queries */
 
@@ -159,6 +160,15 @@ main {
         height: 260px;
         padding-left: 25px;
     }
+}
+
+@media screen and (max-width: 700px) {
+    header .brand-logo,.sidenav-logo {
+    padding-left: 0;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+    
 }
 
 @media screen and (min-width: 800px) {
