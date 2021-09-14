@@ -51,6 +51,10 @@ header .brand-logo,
     background-color: #bb0000;
 }
 
+.add-recipe-btn-2 {
+    margin-top: 50px;
+}
+
 .btn-row .cancel-btn {
     padding: 15px 20px;
     border-radius: 8px;
@@ -132,21 +136,20 @@ header .brand-logo,
     transform: scale(1.3);
 }
 
-.full-recipe-img {
+
+.img_recipe {
+    display: block;
+    margin: 0;
     width: 100%;
-    height: 320px;
-    margin-top: 2px;
-    display:flex;
+    height: 100%;
 }
 
+.full-recipe {
+    color: #f9a825;
+}
 
 /* Media Queries */
 
-@media screen and (max-width: 320px) {
-    .full-recipe-img {
-        padding-left : 0px;
-    }
-}
 
 @media screen and (max-width: 500px) {
     h4 {
@@ -156,25 +159,12 @@ header .brand-logo,
         font-size: 20px;
     }
 
-    .full-recipe-img {
-        height: 260px;
-        padding-left: 25px;
-    }
 }
 
 @media screen and (max-width: 700px) {
     header .brand-logo,.sidenav-logo {
-    padding-left: 0;
-    font-size: 1.8em;
-    font-weight: 500;
-}
-    
-}
-
-@media screen and (min-width: 800px) {
-    
-    .full-recipe-img { 
-        padding-left: 90px;
+        padding-left: 0;
+        font-size: 1.8em;
+        font-weight: 500;
     }
 }
-    
