@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<!---- Page Heading ---->
 <div class="row">
     <div class="col s12">
         <h3 class="center-align page-heading text-shadow">
@@ -10,7 +10,7 @@
     </div>
 </div>
 
-
+<!---- Search ---->
 <section class="search">
     <div class="row search-panel">
         <form class="col s12" action="{{ url_for('search') }}" method="POST">
@@ -31,6 +31,7 @@
     </div>
 </section>
 
+<!---- Recipes ---->
 {% if pizzas|length > 0 %}
 <section class="recipes">
     <div class="row">

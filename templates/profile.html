@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!---- Page Heading ---->
 <h3 class="center-align page-heading fira-sans">
     {{ username }}'s Recipes
 </h3>
 
-
+<!---- Add Recipe ---->
 <div class="row">
     <div class="col s12 center-align">
         <a href="{{ url_for('add_recipe') }}" class="add-recipe-btn-2 waves-effect waves-light btn-large text-shadow">Add Recipe</a>
     </div>
 </div>
-
+<!---- Users Recipes ---->
 <section class="">
     <div class="row">
         {% if pizzas|length == 0 %}

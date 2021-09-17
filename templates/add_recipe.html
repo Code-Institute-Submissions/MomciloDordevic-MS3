@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!---- Page Heading ---->
 <div class="row">
     <div class="col s12">
         <h3 class="center-align page-heading fira-sans">Add your own pizza recipe here!</h3>
     </div>
 </div>
+<!---- Add Recipe Form ---->
 <section class="form-container fira-sans">
     <div class="row form-row">
         <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12 m10 offset-m1 l10 offset-l1">

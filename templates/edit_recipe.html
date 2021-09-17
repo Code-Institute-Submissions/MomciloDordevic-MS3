@@ -1,20 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!---- Title ---->
+    <!---- Page Heading ---->
     <div class="row">
-        <h3 class="center-align page-heading">Edit Recipe</h3>
+        <h3 class="center-align page-heading fira-sans">Edit Recipe</h3>
     </div>
 
-    <!---- Add recipes ---->
+    <!---- Add Recipes ---->
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', pizza_id=pizza._id) }}">
             <div class="card-panel">
-                <!-- Select category -->
+                <!-- Select Category -->
                 <div class="row">
-                    <div class="input-field col s12">
-                        <i class=""></i>
-                        <select id="category_name" name="category_name" class="validate" required>
+                    <div class="input-field col s12 fira-sans">
+                        <select id="category_name" name="category_name" class="validate fira-sans" required>
                             <option value="" disabled>Choose Category</option>
                             {% for category in categories %}
                                 {% if category.category_name == pizza.category_name %}
@@ -28,18 +27,18 @@
                         <label for="category_name">Pizza Category</label>
                     </div>
                 </div>
-            <!---- Recipe name ---->
+            <!---- Recipe Name ---->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 fira-sans">
                     <input id="recipe_name" name="recipe_name" value="{{ pizza.recipe_name }}" 
-                    type="text" pattern="^[^\s][A-Za-z0-9\s]{1,20}$" class="validate" required>
+                    type="text" pattern="^[^\s][A-Za-z0-9\s]{1,20}$" class="validate fira-sans" required>
                     <label for="recipe_name">Recipe name</label>
                 </div>
             </div>
             <!---- Upload img URL ---->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="image_url" name="image_url" value="{{ pizza.image_url }}" type="url">
+                    <input id="image_url" name="image_url" value="{{ pizza.image_url }}" type="url" class="fira-sans">
                     <label for="image_url">Image url</label>
                     <span class="helper-text" data-error="enter valid URL" data-success="right"></span>
                 </div>
@@ -47,7 +46,7 @@
             <!---- Ingredients  ---->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate">
+                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate fira-sans">
                         {{- pizza.ingredients -}}
                     </textarea>
                     <label for="ingredients">Ingredients</label>
@@ -57,7 +56,7 @@
             <!---- Alergens  ---->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="alergens" name="alergens" class="materialize-textarea validate">
+                    <textarea id="alergens" name="alergens" class="materialize-textarea validate fira-sans">
                         {{- pizza.alergens -}}
                     </textarea>
                     <label for="alergens">Alergens</label>
@@ -67,7 +66,7 @@
             <!---- Baking Time  ---->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="baking_time" name="baking_time" value="{{ pizza.baking_time }}" type="text" class="validate">
+                    <input id="baking_time" name="baking_time" value="{{ pizza.baking_time }}" type="text" class="validate fira-sans">
                     <label for="baking_time">Baking Time (in minutes)</label>
                     <span class="helper-text" data-error="enter valid number" data-success="right">For examle: 30</span>
                 </div>
@@ -75,7 +74,7 @@
             <!---- Tips  ---->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="recipe_description" name="recipe_description" class="materialize-textarea">
+                    <textarea id="recipe_description" name="recipe_description" class="materialize-textarea fira-sans">
                         {{- pizza.recipe_description -}}
                     </textarea>
                     <label for="recipe_description">Recipe description</label>
@@ -92,13 +91,13 @@
                             {% else %}
                                 <input type="checkbox" id="is_vegan" name="is_vegan">
                             {% endif %}
-                            <span class="lever"></span>
+                            <span class="lever fira-sans"></span>
                             Vegan 
                         </label>
 					</div>
 				</div>
 			</div>
-            <!---- Submit button ---->
+            <!---- Submit Button ---->
             <div class="row btn-row valign-wrapper">
                 <div class="col s12 center-align">
                     <button type="submit" class="add-recipe-btn text-shadow">Edit Recipe</button>
