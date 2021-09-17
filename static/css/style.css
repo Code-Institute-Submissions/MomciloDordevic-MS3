@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
 /* Styles needed in order for the footer to be fixed at bottom of the page */
 
 body {
@@ -11,6 +13,8 @@ main {
 
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-family: 'Fira Sans', sans-serif;
+
 }
 
 .flashes h4 {
@@ -26,6 +30,7 @@ header .brand-logo,
 .page-heading {
     color: #f9a825;
     padding-top: 10px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .search {
@@ -89,6 +94,7 @@ header .brand-logo,
 }
 
 .content .recipe-heading {
+    font-family: 'Fira Sans', sans-serif;
     font-size: 1.5em;
     font-weight: 800;
 }
