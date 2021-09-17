@@ -36,11 +36,11 @@
     <div class="row">
         {% for pizza in pizzas %}
         <div class="col s12 m6 l6 xl4">
-            <div class="card large recipe-card">
+            <div class="card large recipe-card fira-sans">
                 <div class="card-image">
                     <img src="{{ pizza.image_url }}">
                 </div>
-                <div class="card-content content center-align">
+                <div class="card-content content center-align fira-sans">
                     <h3 class="recipe-heading">{{ pizza.recipe_name }}
                         {% if pizza.is_vegan == "on" %}
                         <i class="fab fa-pagelines vegan_tooltip tooltipped " data-position="right"
@@ -53,7 +53,7 @@
                     </span>
                 </div>
                 {% if session.user|lower == pizza.created_by|lower or session.user|lower == "admin" %}
-                <div class="row center-align content">
+                <div class="row center-align content fira-sans">
                     <div class="col s12">
                         <div class="col s6 m6">
                             <a class="btn-edit" href="{{ url_for('edit_recipe', pizza_id=pizza._id) }}">Edit</a>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 {% endif %}
-                <div class="card-action btn-box center-align">
+                <div class="card-action btn-box center-align fira-sans">
                     <a class="full-recipe-btn black-text" href="{{ url_for('full_recipe', pizza_id=pizza._id) }}">Full Recipe</a>
                 </div>
             </div>
@@ -73,9 +73,9 @@
     </div>
 </section>
 {% else %}
-<div class="row no-results-row">
+<div class="row">
     <div class="col s12">
-        <h3 class="center-align no-results-heading">No Results found</h3>
+        <h3 class="center-align fira-sans">No Results found</h3>
     </div>
 </div>
 {% endif %}

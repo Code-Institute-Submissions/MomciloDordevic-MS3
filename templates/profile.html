@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align page-heading">
+<h3 class="center-align page-heading fira-sans">
     {{ username }}'s Recipes
 </h3>
 
@@ -15,7 +15,7 @@
 <section class="">
     <div class="row">
         {% if pizzas|length == 0 %}
-        <div class="col s12 center-align">
+        <div class="col s12 center-align fira-sans">
             <h5 class="">Hey <span>{{ username }}!</span></h5>
             <br>
             <p class="">Ready to create something delicious?</p>
@@ -25,7 +25,7 @@
         {% else %}
         {% for pizza in pizzas %}
         <div class="col s12 m6 l6 xl4">
-            <div class="card large recipe-card">
+            <div class="card large recipe-card fira-sans">
                 <div class="card-image">
                     <img src="{{ pizza.image_url }}">
                 </div>
