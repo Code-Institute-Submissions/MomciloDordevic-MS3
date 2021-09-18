@@ -134,3 +134,34 @@ The user is looking for a web-based application where they can:
 ### Subscriber Collection
 - If the user decides to subscribe to the newsletter he/she will have to provide:
     - Email Address (which is stored in the database)
+
+### Wireframes
+[Wireframes part 1]()
+
+[Wireframes part 2]()
+
+[ back to top ](#table-of-contents)
+
+## Features
+
+- Each page has responsive and fixed-top navigation element, so the user can navigate to a different page at any moment.
+- The **_Footer_** of the site contains social media links and a Newsletter subscription
+
+- If the user is logged in to their account, they will have access to:
+    - Home Page
+    - Profile page
+    - New Recipe Page
+    - Log Out Page
+    - If the user is "admin", then will have access to Manage Categories, where they can add new categories or edit/delete currently active ones.
+- The website uses _cards_ to display recipes, giving short info for the user:
+    - Recipe Image
+    - Recipe Name
+    - Alergens
+    - Ingredients
+    - Recipe Created By
+    - A button to view the full recipe
+    - A Edit Button to edit the recipe if user is the creator of the recipe or is "admin"
+    - A Delete BUtton to delete the recipe if user is the creator of the recipe or is "admin" 
+
+
+
