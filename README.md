@@ -257,6 +257,75 @@ If the user is **"admin"**, he/she will have access to Manage Categories.
     - Edit username or password
     - Delete account
 
+## Technologies Used
+### Languages
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+### Frameworks, Libraries & Programs Used
+- [Materialize](https://materializecss.com/)
+    - Materialize was used to build the website and make it responsive and stylish.
+- [jQuery](https://jquery.com/)
+    - jQuery was used to initialize [Materialize](https://materializecss.com/) and also for the site's functionality, as is Vanilla JS as well
+- [Google Fonts](https://fonts.google.com/)
+    - Google Fonts was used to import the **Fira Sans** font, which was used throughout the project.
+- [Font Awesome](https://fontawesome.com/)
+    - Font Awesome was used for all icons used in this project.
+- [GitHub](https://github.com/)
+    - GitHub is used to store the project's code after being pushed from Git.
+- [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+- [Gitpod](https://www.gitpod.io/docs/)
+    - Used as the IDE for this project.
+- [Am I Responsice](http://ami.responsivedesign.is/#)
+    - Used to validate the responsiveness of the site.
+- [Heroku](https://id.heroku.com/login)
+     -  Heroku was used to deploy the website.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+     - Flask was used as the web framework for the application.
+- [PyMongo](https://pypi.org/project/pymongo/)
+     - `flask_pymongo` was used to connect between the MongoDB database and Python.
+- [BSON](https://bsonspec.org/)
+     - `bson.objectid` is a required dependency for MongoDB.
+- [Jinja](http://jinja.pocoo.org/docs/2.10/)
+     - Jinja templating language was used to simplify and display backend data in HTML.
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
+     - Werkzeug was used for password hashing and authentication.
+
+[ back to top ](#table-of-contents)
+
+
+## Testing
+
+[All Testing](https://github.com/MomciloDordevic/MS3/blob/main/TESTING.md)
+
+
+## Deployment
+
+- Login in to [Heroku](https://id.heroku.com/login)
+- Click on New, and Create a new app.
+- Enter your app name.
+- Select the region that is closest to you.
+- Click on the Connect to GitHub section in the deploy tab in Heroku.
+- Search your repository to connect with it.
+- Then connect to your repository.
+- Go to settings and click on Config Vars.
+- Enter the variables in your env.py file.
+    
+        os.environ.setdefault("IP", "0.0.0.0")
+        os.environ.setdefault("PORT", "8080")
+        os.environ.setdefault("SECRET_KEY", "Generate a key for randomkeygen.com")
+        os.environ.setdefault("MONGO_URI", "") --> Used to connect to our database
+        os.environ.setdefault("MONGO_DBNAME", "Name of our database")
+
+- Enable Automatic Deployment
+
+    - Go to the deploy tab
+    - In the automatic deploys section, choose the branch that you want to deploy from and select Enable Automatic Deploys.
+
+
 
 
 
