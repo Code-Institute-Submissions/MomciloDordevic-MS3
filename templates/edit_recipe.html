@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!---- Page Heading ---->
+    <!-- Page Heading -->
     <div class="row">
         <h3 class="center-align page-heading fira-sans">Edit Recipe</h3>
     </div>
 
-    <!---- Add Recipes ---->
+    <!-- Add Recipes -->
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', pizza_id=pizza._id) }}">
             <div class="card-panel">
@@ -27,7 +27,7 @@
                         <label for="category_name">Pizza Category</label>
                     </div>
                 </div>
-            <!---- Recipe Name ---->
+            <!-- Recipe Name -->
             <div class="row">
                 <div class="input-field col s12 fira-sans">
                     <input id="recipe_name" name="recipe_name" value="{{ pizza.recipe_name }}" 
@@ -35,7 +35,7 @@
                     <label for="recipe_name">Recipe name</label>
                 </div>
             </div>
-            <!---- Upload img URL ---->
+            <!-- Upload img URL -->
             <div class="row">
                 <div class="input-field col s12">
                     <input id="image_url" name="image_url" value="{{ pizza.image_url }}" type="url" class="fira-sans">
@@ -43,7 +43,7 @@
                     <span class="helper-text" data-error="enter valid URL" data-success="right"></span>
                 </div>
             </div>
-            <!---- Ingredients  ---->
+            <!-- Ingredients  -->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="ingredients" name="ingredients" class="materialize-textarea validate fira-sans">
@@ -53,7 +53,7 @@
                     <span class="helper-text" data-error="wrong" data-success="right"></span>
                 </div>
             </div>
-            <!---- Alergens  ---->
+            <!-- Alergens  -->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="alergens" name="alergens" class="materialize-textarea validate fira-sans">
@@ -63,7 +63,7 @@
                     <span class="helper-text" data-error="wrong" data-success="right"></span>
                 </div>
             </div>
-            <!---- Baking Time  ---->
+            <!-- Baking Time  -->
             <div class="row">
                 <div class="input-field col s12">
                     <input id="baking_time" name="baking_time" value="{{ pizza.baking_time }}" type="text" class="validate fira-sans">
@@ -71,7 +71,7 @@
                     <span class="helper-text" data-error="enter valid number" data-success="right">For examle: 30</span>
                 </div>
             </div>
-            <!---- Tips  ---->
+            <!-- Tips  -->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="recipe_description" name="recipe_description" class="materialize-textarea fira-sans">
@@ -80,7 +80,7 @@
                     <label for="recipe_description">Recipe description</label>
                 </div>
             </div>
-            <!---- Is Vegan ---->
+            <!-- Is Vegan -->
             <div class="row">
 				<div class="input-field col s12">
 					<div class="switch">

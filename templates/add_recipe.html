@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!---- Page Heading ---->
+<!-- Page Heading -->
 <div class="row">
     <div class="col s12">
         <h3 class="center-align page-heading fira-sans">Add your own pizza recipe here!</h3>
     </div>
 </div>
-<!---- Add Recipe Form ---->
+<!-- Add Recipe Form -->
 <section class="form-container fira-sans">
     <div class="row form-row">
         <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12 m10 offset-m1 l10 offset-l1">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="card-panel">
-                <!---- Recipe name ---->
+                <!-- Recipe name -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-pencil-alt prefix form-icon"></i>
@@ -36,7 +36,7 @@
                         <label for="recipe_name">Pizza Recipe Name</label>
                     </div>
                 </div>
-                <!---- Recipe Image URl ---->
+                <!-- Recipe Image URl -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="far fa-image prefix form-icon"></i>
@@ -44,7 +44,7 @@
                         <label for="image_url">Recipe Image URL</label>
                     </div>
                 </div>
-                <!---- Ingredients ---->
+                <!-- Ingredients -->
                 <div id="ingredients-row" class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-list-ul prefix form-icon"></i>
@@ -52,7 +52,7 @@
                         <label for="ingredients">Ingredients</label>
                     </div>
                 </div>
-                <!---- Alergens ---->
+                <!-- Alergens -->
                 <div id="alergens-row" class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-list-ul prefix form-icon"></i>
@@ -60,7 +60,7 @@
                         <label for="alergens">Alergens</label>
                     </div>
                 </div>
-                <!---- Baking Time ----->
+                <!-- Baking Time --->
                 <div id="baking-time-row" class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-list-ul prefix form-icon"></i>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                 </div>
-                <!---- Add Recipe and Cancel Button---->
+                <!-- Add Recipe and Cancel Button -->
                 <div class="row btn-row valign-wrapper center-align">
                     <div class="col s12 center-align">
                         <button type="submit" class="add-recipe-btn text-shadow">Add Recipe</button>
