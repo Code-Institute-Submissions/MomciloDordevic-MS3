@@ -83,4 +83,42 @@ The user is looking for a web-based application where they can:
     - Viewing the Full Recipe
     - Able to Register and Login
 
-[^ back to top ^](#table-of-contents)
+[ back to top ](#table-of-contents)
+
+## Design
+
+### Colors
+
+- Colors used for text and background:
+    - #f9a825
+    - #bb0000
+    - Red
+    - #fff
+    - rgb(0, 185, 0)
+    - #fff9ea
+
+### Typography
+
+- The primary font used is **Fira Sans**, and **Sans Serif** is used as a default backup font.
+
+## Data Schema
+[MongoDB](https://www.mongodb.com/) was used for this project and the schema design was created. See below:
+
+![Schema Design]()
+
+[ back to top ](#table-of-contents)
+
+### Users Collection
+- Upon regisering, the user will be required to provide the following:
+    - Username
+    - Password
+
+### Recipes Collection
+- When creating a new recipe the user will provide the following:
+    - Category Name (Required)
+    - Recipe Name (Required)
+    - Recipe Image URL (Required)
+    - Ingredients (Required)
+    - Alergens (Required)
+    - Baking Time (Required)
+    - Recipe Description (Not Required)
