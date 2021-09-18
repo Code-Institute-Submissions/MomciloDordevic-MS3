@@ -354,21 +354,6 @@ All Testing can be found here:
 - [Code Institute's Flask Task-Manager Mini Project](https://www.youtube.com/watch?v=y72Dq3GRxhc)
 - [Error Handlers](https://flask.palletsprojects.com/en/1.1.x/errorhandling/)
 
-
-### Images
-
-- Recipes 
-
- -Images added for testing purposes
-
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-
 [ back to top ](#table-of-contents)
 
 
