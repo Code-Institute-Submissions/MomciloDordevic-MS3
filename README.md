@@ -1,6 +1,6 @@
 <h1 align="center">Pizza Lovers</h1>
 
-![Responsive]()
+![Responsive](static/images/amiresponsive.png)
 
 [View Live Site Here](http://pizza-lovers-moma.herokuapp.com/get_pizzas)
 
@@ -37,22 +37,25 @@ The user is looking for a web-based application where they can:
 
 
 ## User Stories
-**As a first-time visitor, I want to be able to:**
-- Easily find recipes stored in the database.
-- View full recipes and get valuable information.
-- Create an Account.
+**As a First-time user, I want to be able to:**
+- Visit the website on every device, so that I can look at the website on desktop, mobile and tablet.
+- Navigate easily through the website, so I can find everything easily. 
+- See an overview of all recipes, so I can get inspired by all recipes.
+- Search for recipes based on words, so I can find recipes easily.
+- Register for an account on the website, so I can share my recipes with other Pizza Lovers.
+- Sign up for the newsletter. 
 
-**As a returning visitor, I want to be able to:**
-- Log into my account and have access to all features of the application.
-- Add/Create recipes and store them in the database.
-- View my and other users recipes.
-- Edit my recipe.
-- Delete a recipe that I have Added/Created.
+**As a Site Member /Returning User, I want to be able to:**
+- Add my recipes, so I can share my recipes with everyone else.
+- Edit my recipes, so I can update information in the recipe.
+- Delete my recipes, so I can remove the recipe when it is no longer relevant. 
+- Login to my profile, so I have access to my recipes. 
+- Logout from my profile, so I can log in to a different profile. 
 
 **As an Admin user of the site, I want to be able to:**
-- Add new categories.
-- Edit all recipes.
-- Delete all recipes.
+- Add new categories, so I can make the categories clear and managable.
+- Edit categories, so I can update categories. 
+- Delete categories, so I can remove categories when they are no longer relevant. 
 
 ### Strategy
 

@@ -63,7 +63,7 @@
     - The first time user can visit an overview of all recipes by clicking on Home. On this page there is an overview of all recipes made.
 4. As a first time user, I want to be able to search recipes based on words, so I can find recipes easily. (For example, I can search the word Ham and all recipes with the ingredient Cheese, Cheese Alergens or Cheese in the recipe name will appear.)
     - On the recipes pages there is a searchbar, where first time users can search for words. The search is based on the title of the recipe or the ingredients. 
-5. As a first time user, I want to register an account on the website, so I can share my recipes on Pizza Lovers. 
+5. As a first time user, I want to register an account on the website, so I can share my recipes with other Pizza Lovers. 
     - The first time user can navigate to the register page by clicking on Login/Register CTA in the top navbar. If the first time user clicks on the CTA they have a choice to login of register. If the first time visistor clicks on register, they will navigate to the register form on the website. 
 6. As a first time user, I want to sign up for the newsletter. 
     - The first time user can go to the footer to sign up for the newsletter. In the footer there is a input field where the first time user can fill in their email to signup.
@@ -77,11 +77,11 @@
     - A site member can delete a recipe on the profile page. There is an overview of all recipes made by the site member on the profile page. There is a button by each recipe, to delete the recipe. Aditionally, recipes can be deleted in the Homepage or in the Full Recipe page if the recipe is created by the user.
 4. As a site member, I want to login to my profile, so I have access to my recipes. 
     - A site member can login by clicking on login at the top navbar on the website. 
-5. As a site member, I want to logout to my profile, so I can logout from my profile. 
+5. As a site member, I want to logout from my profile, so I can log in to a different profile. 
     - As a site member is logged in they can logout by clicking on logout at the top navbar.
 
 ### Admin goals
-1. As an admin, I want to add new categories, so I can make the categories clear and manageable. 
+1. As an admin, I want to add new categories, so I can make the categories clear and managable. 
     - The admin can add new categories by going to the category page and to click on add category.
 2. As an admin, I want to edit categories, so I can update categories. 
     - The admin can edit categories by going to the category page and to click on edit category.
