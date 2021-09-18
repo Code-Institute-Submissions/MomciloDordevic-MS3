@@ -107,7 +107,7 @@ The user is looking for a web-based application where they can:
 ## Data Schema
 [MongoDB](https://www.mongodb.com/) was used for this project and the schema design was created. See below:
 
-![Schema Design]()
+![Schema Design](static/images/database.png)
 
 [ back to top ](#table-of-contents)
 
