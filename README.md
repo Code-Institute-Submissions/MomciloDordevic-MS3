@@ -34,3 +34,22 @@ The user is looking for a web-based application where they can:
     - Update(Edit) recipe
     - Delete recipe they created
 - Be able to search the database for recipes with keywords that query Recipe Names, Ingredients and Alergens.
+
+
+## User Stories
+**As a first-time visitor, I want to be able to:**
+- Easily find recipes stored in the database.
+- View full recipes and get valuable information.
+- Create an Account.
+
+**As a returning visitor, I want to be able to:**
+- Log into my account and have access to all features of the application.
+- Add/Create recipes and store them in the database.
+- View my and other users recipes.
+- Edit my recipe.
+- Delete a recipe that I have Added/Created.
+
+**As an Admin user of the site, I want to be able to:**
+- Add new categories.
+- Edit all recipes.
+- Delete all recipes.
