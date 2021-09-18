@@ -20,5 +20,17 @@
 > - [Resources](#resources)
 > - [Acknowledgements](#acknowledgements)
 
-## UX 
+## UX
+
 ### Project Goals
+
+The primary goal of **Pizza Lovers** is to allow the users to create, save, search, and view their favorite pizza recipes in one place using  HTML5, CSS3, JavaScript, Python, Flask, and MongoDB.
+
+### User Goals
+The user is looking for a web-based application where they can:
+- Use the CRUD conventions to:
+    - Create a recipe
+    - Read recipe
+    - Update(Edit) recipe
+    - Delete recipe they created
+- Be able to search the database for recipes with keywords that query Recipe Names, Ingredients and Alergens.
