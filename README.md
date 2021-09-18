@@ -299,6 +299,7 @@ If the user is **"admin"**, he/she will have access to Manage Categories.
 
 ## Testing
 
+All Testing can be found here:
 [All Testing](https://github.com/MomciloDordevic/MS3/blob/main/TESTING.md)
 
 
@@ -325,7 +326,67 @@ If the user is **"admin"**, he/she will have access to Manage Categories.
     - Go to the deploy tab
     - In the automatic deploys section, choose the branch that you want to deploy from and select Enable Automatic Deploys.
 
+## Credits
 
 
+### Resources
+
+- [Rebecca Tracey-Timoney](https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/README.md#Credits)
+- [juanstelling](https://github.com/juanstelling/MS3_breaktasty/blob/fe5b544beb648f153f69f362bf06b31bcc3e7b09/README.md#deployment)
+- [TravelTimN](https://github.com/TravelTimN/flask-task-manager-project/tree/demo)
+- [Stack Overflow](https://stackoverflow.com/) 
+    - For genereal resource
+- [mickmccann](https://github.com/mickmccann/MS3-Small-Jobs#contents)
+- [Code Institute's Flask Task-Manager Mini Project](https://www.youtube.com/watch?v=y72Dq3GRxhc)
+- [Materialize](https://materializecss.com/)
+
+
+### Code
+
+- [steff880](https://github.com/steff880/MS3-MyRecipeBook)
+- [Rebecca Tracey-Timoney](https://github.com/rebeccatraceyt/bake-it-til-you-make-it/blob/master/README.md#Credits)
+- [juanstelling](https://github.com/juanstelling/MS3_breaktasty/blob/fe5b544beb648f153f69f362bf06b31bcc3e7b09/README.md#deployment)
+- [TravelTimN](https://github.com/TravelTimN/flask-task-manager-project/tree/demo)
+- [DonnaIB](https://github.com/DonnaIB/surround_yourself_with_spanish/blob/master/app.py)
+- [Code Institute's Flask Task-Manager Mini Project](https://www.youtube.com/watch?v=y72Dq3GRxhc)
+- [Error Handlers](https://flask.palletsprojects.com/en/1.1.x/errorhandling/)
+
+
+### Images
+
+- Recipes 
+
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+
+[ back to top ](#table-of-contents)
+
+
+### Acknowledgements
+
+-   My mentor, Adegbenga Adeye, for his guidance and feedback.
+-   The team at Code Institute, for teaching me the necessary skills to create this site.
+-   [Stackoverflow](https://stackoverflow.com/) - For tips and information.
+-   Code Institute Tutor team.
+-   [TravelTimN](https://github.com/Code-Institute-Solutions/TaskManagerAuth)
+-   [steff880](https://github.com/steff880/MS3-MyRecipeBook)
+-   [juanstelling](https://github.com/juanstelling/MS3_breaktasty)
+-   [w3schools](https://www.w3schools.com/default.asp) for all the useful information found on the site.
+
+
+## For the Assessors
+
+If you would like to login as an **"admin"**, please use this:
+
+- Username: Admin
+- Password: 1234
+
+
+Thanks for reading !
 
 
