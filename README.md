@@ -108,12 +108,12 @@ The user is looking for a web-based application where they can:
 
 [ back to top ](#table-of-contents)
 
-### Users Collection
+### User Collection
 - Upon regisering, the user will be required to provide the following:
     - Username
     - Password
 
-### Recipes Collection
+### Recipe Collection
 - When creating a new recipe the user will provide the following:
     - Category Name (Required)
     - Recipe Name (Required)
@@ -122,3 +122,15 @@ The user is looking for a web-based application where they can:
     - Alergens (Required)
     - Baking Time (Required)
     - Recipe Description (Not Required)
+
+### Category Collection
+- Currently, there are five categories the user can choose from:
+    - American Pizza
+    - Italian Pizza
+    - Pan Pizza
+    - Pizza Pie
+    - Calzone
+
+### Subscriber Collection
+- If the user decides to subscribe to the newsletter he/she will have to provide:
+    - Email Address (which is stored in the database)
