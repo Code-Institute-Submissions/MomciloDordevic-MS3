@@ -8,8 +8,8 @@
 - <a href="#responsiveness">2. Responsiveness</a>
 - <a href="#browser-compatibility">3. Browser compability</a>
 - <a href="#user-stories">4. Testing user stories </a>
-- <a href="#defensive-design">5. Defensive design</a>
-- <a href="#bugs">5. Bugs</a>
+- <a href="#manual-testing">5. Manual Testing</a>
+- <a href="#bugs">6. Bugs</a>
 
 ---
 
@@ -43,6 +43,8 @@
 - The website is tested on the following devices: 
     - Desktop: 1024px, 1366px, 1440px, 1600px and 1680px. 
     - Mobile & Tablet: Galaxy S5, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad and  iPad Pro.
+
+<span id="browser-compatibility"></span>
 
 ## 3. Browser compatibility 
 - I have tested the website on Mozila, Chrome and Microsoft Edge while on a desktop.
@@ -86,7 +88,10 @@
 3. As an admin, I want to delete categories, so I can remove categories when they are no longer relevant. 
     - the admin can delete a categorie by going to the category page and to click on delete category.
 
-## Manual Testing
+
+<span id="manual-testing"></span>
+
+## 5. Manual Testing
 
 #### Testing Navigation
 
@@ -233,3 +238,67 @@ If user in session:
         <td>Pass</td>
     </tr>
 </table>
+
+#### Testing Forms
+
+- Register Form
+
+ <table>
+    <tr>
+        <th>Test</th>
+        <th>Expected Outcome</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>Username Field</td>
+        <td>If a user tries to submit the form without entering a username, 
+           display a message that this field is required.
+        </td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>If a user tries to submit without entering a password or the format doesn't match,
+            display a message.
+        </td>
+        <td>Pass</td>
+    </tr>
+</table>
+
+- Login Form
+
+ <table>
+    <tr>
+        <th>Test</th>
+        <th>Expected Outcome</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>Username Field</td>
+        <td>If the user tries to log in with wrong username,
+            provide the user with a message to inform them.
+        </td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>If the user tries to log in with wrong password,
+            provide the user with a message to inform them.
+        </td>
+        <td>Pass</td>
+    </tr>
+</table>
+
+<span id="bugs"></span>
+
+## 6. Bugs | Solved
+1. A bug was found by running the project. I just started the project and set everything in place, such as connecting to MongoDB, installed flask and made the env.py and setup for my app.py. Few days went by and I had to update some drivers which caused me to close all tabs, but when I opened the project I couldn't run the project and got an error by running the app.
+    - After a few hours, I accidentally opened a new workspace on gitpod therefore my app wasn't running, because everything I installed with for example Flask wasn't pushed to GitHub. I found the answer to my problem on Slack, I just had to re create my env.py file with all the correct os.environ inputs.
+2. A bug with Select Form Validation, I had an issue with it since i have tried to make my own validation in js with custom colours.
+    - I had to visit the Materialize Form Validation section again and copy the validation from there with no editing this time.
+
+[Go to README.md file](README.md).
+
+## For the Assessors
+
+**Please note, that due to being pressed by the time, and new commitments I was not able to add all the testing I wanted to.** 
