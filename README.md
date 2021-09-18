@@ -145,7 +145,7 @@ The user is looking for a web-based application where they can:
 ## Features
 
 - Each page has responsive and fixed-top navigation element, so the user can navigate to a different page at any moment.
-- The **_Footer_** of the site contains social media links and a Newsletter subscription
+- The **Footer** of the site contains social media links and a Newsletter subscription.
 
 - If the user is logged in to their account, they will have access to:
     - Home Page
@@ -161,7 +161,102 @@ The user is looking for a web-based application where they can:
     - Recipe Created By
     - A button to view the full recipe
     - A Edit Button to edit the recipe if user is the creator of the recipe or is "admin"
-    - A Delete BUtton to delete the recipe if user is the creator of the recipe or is "admin" 
+    - A Delete BUtton to delete the recipe if user is the creator of the recipe or is "admin"
+### Existing Features
+
+- Home Page
+
+    - Welcome Text inside the navigation element
+    - A search bar where the user can search for recipes
+    - Recipe cards
+
+- Login 
+
+    - Login page allows the user to:
+
+        - Enter the username used when registered.
+
+        - Use the password created when registered and [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/) will un-hash the password for user authentication.
+
+        - Login button, submits the form when all fields are filled.
+
+- Register
+
+    - Registration Form allows the user to:
+        
+        - Enter their desired username
+        - The password field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/) to hash the password on entry.
+        - Register button, to submit the form when all fields are filled correctly.
+
+- Profile
+
+    - Profile page allows the user to:
+
+        - View the recipes created by them.
+        - Use the **Add Recipe** button to create a new recipe.
+        - Use the full recipe button to view the full recipe.
+
+- New Recipe
+
+    - New Recipe page allows the user to:
+
+        - Fill the add recipe form by:
+
+            - Choosing a category
+            - Adding the recipe name
+            - Adding the recipe image
+            - Adding the ingredients
+            - Adding the alergens
+            - Adding the Baking Time
+            - Adding the Recipe Description (Optional)
+            - Toggling the Vegan switch (If the pizza is vegan or not)
+        
+        - Use the buttons to:
+
+            - Cancel and go back.
+            - Submit the form by clicking the **Add Recipe button**.
+    
+- Edit Recipe Button:
+
+    - Allows the user to:
+
+        - Change and edit each field of the form.
+        - Submit the form and update the recipe.
+        - Cancel and go back.
+
+- Delete Recipe Button:
+
+    - Allows the user to:
+
+        - Delete the recipe they have created.
+    
+If the user is **"admin"**, he/she will have access to Manage Categories.
+
+- Manage Categories:
+
+    - Allows the "admin" user to:
+
+        - View all categories
+        - Add a new category
+        - Edit all categories
+        - Delete all categories
+
+- Add Category Button:
+
+    - Allows the "admin" user to:
+
+        - Add a new category with a text form.
+        - Submit the form by using the **Add Category** button.
+
+
+### Features to implement in the future
+
+- Manage Profile
+
+    - Add a profile image
+    - Edit username or password
+    - Delete account
+
 
 
 
