@@ -53,3 +53,34 @@ The user is looking for a web-based application where they can:
 - Add new categories.
 - Edit all recipes.
 - Delete all recipes.
+
+### Strategy
+
+- For this project, the targeted audiences would be:
+    - Pizza/Food Lovers
+    - People who are passionate about cooking
+    - People of all ages searching for information
+    
+- The website enables the user to:
+    - Register an account
+    - Log In to their account
+    - View Recipes
+    - Search Recipes, by recipe name, ingredients or alergens
+    - Create their own recipes and upload them to the database
+    - View the full recipe they have created, or that someone else has created
+    - Edit recipes they  have created
+    - Delete a recipe created by them
+    - Subscribe to a Newsletter (Fictional)
+
+### Scope
+
+- What the user will look for in this web application:
+    - Easy navigation
+    - Welcoming Design
+    - Searching the database for recipes
+    - Adding their recipes
+    - Managing recipes (Edit or Delete)
+    - Viewing the Full Recipe
+    - Able to Register and Login
+
+[^ back to top ^](#table-of-contents)
