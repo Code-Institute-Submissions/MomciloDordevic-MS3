@@ -296,9 +296,14 @@ If user in session:
     - After a few hours, I accidentally opened a new workspace on gitpod therefore my app wasn't running, because everything I installed with for example Flask wasn't pushed to GitHub. I found the answer to my problem on Slack, I just had to re create my env.py file with all the correct os.environ inputs.
 2. A bug with Select Form Validation, I had an issue with it since i have tried to make my own validation in js with custom colours.
     - I had to visit the Materialize Form Validation section again and copy the validation from there with no editing this time.
+3. Two errors were showing up for me in the terminal, one saying that flask.g is unused as well as env. The other problem was from gitpod.yml saying that an extension is not synced and not added.<br>
+![Terminal Bugs](static/images/terminal_buggs.png)<br>
+    - After consulting with my mentor Adegbenga Adeye, he told me not to worry about the two errors that are mentioning the unused imports. The extension is not synced error is a error inside github/gitpod and that he preffers to write his code localy and with VS Code, he advised me to change my current coding enviroment since its prone to buggs every now and again.
 
 [Go to README.md file](README.md).
 
 ## For the Assessors
 
 **Please note, that due to being pressed by the time, and new commitments I was not able to add all the testing I wanted to.** 
+
+Thank you for your time.
