@@ -348,7 +348,7 @@ All Testing can be found here:
 - [juanstelling](https://github.com/juanstelling/MS3_breaktasty/blob/fe5b544beb648f153f69f362bf06b31bcc3e7b09/README.md#deployment)
 - [TravelTimN](https://github.com/TravelTimN/flask-task-manager-project/tree/demo)
 - [Stack Overflow](https://stackoverflow.com/) 
-- For genereal resources
+#### For genereal resources
 - [mickmccann](https://github.com/mickmccann/MS3-Small-Jobs#contents)
 - [Code Institute's Flask Task-Manager Mini Project](https://www.youtube.com/watch?v=y72Dq3GRxhc)
 - [Materialize](https://materializecss.com/)
