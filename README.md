@@ -381,6 +381,8 @@ All Testing can be found here:
 
 ## For the Assessors
 
+**Please note, that due to being pressed by the time, new commitments and two jobs, I was not able to add all the features and design I wanted to.** 
+
 If you would like to login as an **"admin"**, please use this:
 
 - Username: Admin

@@ -1,6 +1,4 @@
 # ---- Imports
-
-
 import os
 from flask import (
     Flask, flash, render_template, g, redirect, request, session, url_for)
@@ -13,8 +11,6 @@ if os.path.exists("env.py"):
 
 
 # ---- Flask App Configuration
-
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -27,7 +23,6 @@ mongo = PyMongo(app)
 # ---- Credits:
 # https://github.com/TravelTimN/flask-task-manager-project/blob/demo/app.py
 # https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
-
 
 def login_required(f):
     @wraps(f)
@@ -42,8 +37,6 @@ def login_required(f):
 
 
 # ---- Home Page
-
-
 @app.route("/")
 @app.route("/get_pizzas")
 def get_pizzas():
@@ -52,8 +45,6 @@ def get_pizzas():
 
 
 # ---- Register
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -79,8 +70,6 @@ def register():
 
 
 # ---- Log In
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if "user" not in session:
@@ -118,8 +107,6 @@ def login():
 
 
 # ---- Profile
-
-
 @app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
 def profile(username):
@@ -136,8 +123,6 @@ def profile(username):
 
 
 # ---- Log Out
-
-
 @app.route("/logout")
 @login_required
 def logout():
@@ -147,8 +132,6 @@ def logout():
 
 
 # ---- Subscribe to Newsletter
-
-
 @app.route("/subscribe", methods=["GET", "POST"])
 def subscribe():
     if request.method == "POST":
@@ -170,12 +153,11 @@ def subscribe():
 
 
 # ---- Add Recipe
-
-
 @app.route("/add_recipe", methods=["GET", "POST"])
 @login_required
 def add_recipe():
     if request.method == "POST":
+        # ---- Is_vegan
         is_vegan = "on" if request.form.get("is_vegan") else "off"
         pizza = {
             "category_name": request.form.get("category_name"),
@@ -199,8 +181,6 @@ def add_recipe():
 
 
 # ---- Edit Recipe
-
-
 @app.route("/edit_recipe/<pizza_id>", methods=["GET", "POST"])
 @login_required
 def edit_recipe(pizza_id):
@@ -233,8 +213,6 @@ def edit_recipe(pizza_id):
 
 
 # ---- Delete Recipe
-
-
 @app.route("/delete_recipe/<pizza_id>")
 @login_required
 def delete_recipe(pizza_id):
@@ -244,8 +222,6 @@ def delete_recipe(pizza_id):
 
 
 # ---- Full Recipe
-
-
 @app.route("/full_recipe/<pizza_id>")
 @login_required
 def full_recipe(pizza_id):
@@ -254,8 +230,6 @@ def full_recipe(pizza_id):
 
 
 # ---- Categories
-
-
 @app.route("/categories")
 @login_required
 def categories():
@@ -267,8 +241,6 @@ def categories():
 
 
 # ---- Add Category
-
-
 @app.route("/add_category", methods=["GET", "POST"])
 @login_required
 def add_category():
@@ -283,8 +255,6 @@ def add_category():
 
 
 # ---- Edit Category
-
-
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -299,8 +269,6 @@ def edit_category(category_id):
 
 
 # ---- Delete Category
-
-
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
@@ -309,8 +277,6 @@ def delete_category(category_id):
 
 
 # ---- Search
-
-
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -319,8 +285,6 @@ def search():
 
 
 # ---- Error Handlers
-
-
 @app.errorhandler(404)
 def not_found(e):
     return render_template("error_handlers/404.html"), 404
@@ -339,4 +303,4 @@ def forbidden(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)  # ---- Dont forget to change debug = False
+            debug=False)
