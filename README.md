@@ -109,6 +109,12 @@ The user is looking for a web-based application where they can:
 
 ![Schema Design](static/images/database.png)
 
+- The Main Databse is called Pizza, it has 4 other collections.
+    - Categories - Where the Recipe Categories are stored.
+    - Pizzas - Where we store the Recipe Name, Image URL, Ingredients, Baking Time, Alergens, Is Vegan, Recipe Description and Created by.
+    - Users - Where the users Username and Password (Hashed) are stored.
+    - Subscribers - Where the users Email is stored.
+
 [ back to top ](#table-of-contents)
 
 ### User Collection
@@ -139,9 +145,13 @@ The user is looking for a web-based application where they can:
     - Email Address (which is stored in the database)
 
 ### Wireframes
-[Wireframes part 1]()
 
-[Wireframes part 2]()
+Wireframes for the homepage, left view is desktop and right view is mobile.
+
+![Wireframes part 1](static/images/Wireframes.png)
+
+Wireframes for the Full Recipe page, left view is desktop and right view is mobile.
+![Wireframes part 2](static/images/Wireframes2.png)
 
 [ back to top ](#table-of-contents)
 
