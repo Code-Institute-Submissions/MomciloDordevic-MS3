@@ -93,7 +93,6 @@ header .brand-logo,
     padding: 50px 0;
 }
 
-
 .card .card-title {
     font-weight: 600;
     padding: 0 10px;
@@ -107,6 +106,18 @@ header .brand-logo,
     font-weight: 800;
 }
 
+/* Images */
+
+.img_recipe {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.full-recipe {
+    color: #f9a825;
+}
 
 .card-image {
     width: 100%;
@@ -114,7 +125,6 @@ header .brand-logo,
 }
 
 /* Footer */
-
 
 .page-footer {
     background-color: #f9a825;
@@ -150,21 +160,7 @@ header .brand-logo,
     transform: scale(1.3);
 }
 
-/* Images */
-
-.img_recipe {
-    display: block;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.full-recipe {
-    color: #f9a825;
-}
-
 /* Media Queries */
-
 
 @media screen and (max-width: 500px) {
     h4 {
