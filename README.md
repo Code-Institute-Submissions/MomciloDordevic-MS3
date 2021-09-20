@@ -33,7 +33,7 @@ The user is looking for a web-based application where they can:
     - Read recipe
     - Update(Edit) recipe
     - Delete recipe they created
-- Be able to search the database for recipes with keywords that query Recipe Names, Ingredients, and Allergens.
+- Be able to search the database for recipes with keywords that query Recipe Names, Ingredients, and Alergens.
 
 
 ## User Stories
@@ -68,7 +68,7 @@ The user is looking for a web-based application where they can:
     - Register an account
     - Log In to their account
     - View Recipes
-    - Search Recipes, by recipe name, ingredients or allergens
+    - Search Recipes, by recipe name, ingredients or alergens
     - Create their own recipes and upload them to the database
     - View the full recipe they have created, or that someone else has created
     - Edit recipes they  have created
