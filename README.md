@@ -18,7 +18,7 @@
 > - [Deployment](#deployment)
 > - [Credits](#credits)
 > - [Resources](#resources)
-> - [Acknowledgements](#acknowledgements)
+> - [Acknowledgments](#acknowledgments)
 
 ## UX
 
@@ -33,12 +33,12 @@ The user is looking for a web-based application where they can:
     - Read recipe
     - Update(Edit) recipe
     - Delete recipe they created
-- Be able to search the database for recipes with keywords that query Recipe Names, Ingredients and Alergens.
+- Be able to search the database for recipes with keywords that query Recipe Names, Ingredients, and Allergens.
 
 
 ## User Stories
-**As a First-time user, I want to be able to:**
-- Visit the website on every device, so that I can look at the website on desktop, mobile and tablet.
+**As a first-time user, I want to be able to:**
+- Visit the website on every device, so that I can look at the website on desktop, mobile, and tablet.
 - Navigate easily through the website, so I can find everything easily. 
 - See an overview of all recipes, so I can get inspired by all recipes.
 - Search for recipes based on words, so I can find recipes easily.
@@ -49,11 +49,11 @@ The user is looking for a web-based application where they can:
 - Add my recipes, so I can share my recipes with everyone else.
 - Edit my recipes, so I can update information in the recipe.
 - Delete my recipes, so I can remove the recipe when it is no longer relevant. 
-- Login to my profile, so I have access to my recipes. 
+- Log in to my profile, so I have access to my recipes. 
 - Logout from my profile, so I can log in to a different profile. 
 
 **As an Admin user of the site, I want to be able to:**
-- Add new categories, so I can make the categories clear and managable.
+- Add new categories, so I can make the categories clear and manageable.
 - Edit categories, so I can update categories. 
 - Delete categories, so I can remove categories when they are no longer relevant. 
 
@@ -68,7 +68,7 @@ The user is looking for a web-based application where they can:
     - Register an account
     - Log In to their account
     - View Recipes
-    - Search Recipes, by recipe name, ingredients or alergens
+    - Search Recipes, by recipe name, ingredients or allergens
     - Create their own recipes and upload them to the database
     - View the full recipe they have created, or that someone else has created
     - Edit recipes they  have created
@@ -109,16 +109,16 @@ The user is looking for a web-based application where they can:
 
 ![Schema Design](static/images/database.png)
 
-- The Main Databse is called Pizza, it has 4 other collections.
+- The Main Database is called Pizza, it has 4 other collections.
     - Categories - Where the Recipe Categories are stored.
-    - Pizzas - Where we store the Recipe Name, Image URL, Ingredients, Baking Time, Alergens, Is Vegan, Recipe Description and Created by.
+    - Pizzas - Where we store the Recipe Name, Image URL, Ingredients, Baking Time, Alergens, Is Vegan, Recipe Description, and Created by.
     - Users - Where the users Username and Password (Hashed) are stored.
     - Subscribers - Where the users Email is stored.
 
 [ back to top ](#table-of-contents)
 
 ### User Collection
-- Upon regisering, the user will be required to provide the following:
+- Upon registering, the user will be required to provide the following:
     - Username
     - Password
 
@@ -157,7 +157,7 @@ Wireframes for the Full Recipe page, left view is desktop and right view is mobi
 
 ## Features
 
-- Each page has responsive and fixed-top navigation element, so the user can navigate to a different page at any moment.
+- Each page has a responsive and fixed-top navigation element, so the user can navigate to a different page at any moment.
 - The **Footer** of the site contains social media links and a Newsletter subscription.
 
 - If the user is logged in to their account, they will have access to:
@@ -165,7 +165,7 @@ Wireframes for the Full Recipe page, left view is desktop and right view is mobi
     - Profile page
     - New Recipe Page
     - Log Out Page
-    - If the user is "admin", then will have access to Manage Categories, where they can add new categories or edit/delete currently active ones.
+    - If the user is "admin", they will have access to Manage Categories, where they can add new categories or edit/delete currently active ones.
 - The website uses _cards_ to display recipes, giving short info for the user:
     - Recipe Image
     - Recipe Name
@@ -367,7 +367,7 @@ All Testing can be found here:
 [ back to top ](#table-of-contents)
 
 
-### Acknowledgements
+### Acknowledgments
 
 -   My mentor, Adegbenga Adeye, for his guidance and feedback.
 -   The team at Code Institute, for teaching me the necessary skills to create this site.
@@ -381,7 +381,7 @@ All Testing can be found here:
 
 ## For the Assessors
 
-**Please note, that due to being pressed by the time, new commitments and two jobs, I was not able to add all the features and design I wanted to.** 
+**Please note, that due to being pressed by the time, new commitments, and two jobs, I was not able to add all the features and design I wanted to.** 
 
 If you would like to login as an **"admin"**, please use this:
 
